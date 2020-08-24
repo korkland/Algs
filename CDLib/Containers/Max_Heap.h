@@ -1,6 +1,10 @@
 #pragma once
 
-// Fixed size heap
+// This heap does not meant to grow dynamically !
+// capacity allocation options:
+// Constructor(capacity)
+// re_alloc(capacity)
+// build_heap_from_data(data, data_size, heap_capacity)
 
 template <class T>
 class MaxHeap

@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="Alg\Algs.h" />
     <ClInclude Include="Containers\Array.h" />
+    <ClInclude Include="Containers\Max_Heap.h" />
     <ClInclude Include="Containers\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

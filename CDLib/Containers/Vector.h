@@ -9,6 +9,11 @@ public:
 		re_alloc(2);
 	}
 
+	Vector(size_t capacity)
+	{
+		re_alloc(capacity);
+	}
+
 	~Vector()
 	{
 		clear();
@@ -80,7 +85,6 @@ public:
 
 	size_t size() const { return m_size; }
 
-private:
 	void re_alloc(size_t new_capacity)
 	{
 		T* new_block = (T*)::operator new(new_capacity * sizeof(T));

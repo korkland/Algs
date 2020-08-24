@@ -5,6 +5,9 @@
 #include "Algs.h"
 #include "Array.h"
 #include "Vector.h"
+#include <unordered_map>
+#include "Max_Heap.h"
+#include "Min_Heap.h"
 
 struct Vector3
 {
@@ -66,6 +69,28 @@ void print_vec(const Vector<T>& vec)
 		std::cout << vec[i] << std::endl;
 }
 
+class Solution {
+public:
+	std::vector<int> twoSum(std::vector<int>& nums, int target) {
+		std::unordered_map<int, int> map = { { nums[0],0 } };
+		std::vector<int> result(2, 0);
+
+		for (int i = 1; i < nums.size(); i++)
+		{
+			int cmplmnt = target - nums[i];
+			auto search = map.find(cmplmnt);
+			if (search != map.end())
+			{
+				result[0] = search->second;
+				result[1] = i;
+				return result;
+			}
+			map[nums[i]] = i;
+		}
+		return result;
+	}
+};
+
 void matrix_multiply_c(float* A, float* B, float* C, unsigned int n, unsigned int m, unsigned int k) {
 	// n - A rows
 	// m - B cols
@@ -112,16 +137,33 @@ int main() {
 	}
 	*/
 
-	float A[16] = { 9, 5, 1, 3, 0,
-					5, 3, 6, 7, 7,
-					1, 7, 8, 1, 7};
-	float B[16] = { 6, 3, 1,
-					5, 8, 1,
-					5, 3, 3,
-					4, 7, 6,
-					8, 9, 9 };
-	float C[16];
-	matrix_multiply_c(A, B, C, 3, 3, 5);
+// 	float A[16] = { 9, 5, 1, 3, 0,
+// 					5, 3, 6, 7, 7,
+// 					1, 7, 8, 1, 7};
+// 	float B[16] = { 6, 3, 1,
+// 					5, 8, 1,
+// 					5, 3, 3,
+// 					4, 7, 6,
+// 					8, 9, 9 };
+// 	float C[16];
+// 	matrix_multiply_c(A, B, C, 3, 3, 5);
+
+// 	Solution s;
+// 	std::vector<int> v = { 2,7,11,15 };
+// 	int target = 26;
+// 	std::vector<int> result = s.twoSum(v, target);
+
+	MaxHeap<int> heap1;
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	heap1.build_heap_from_data(arr, 10, 12);
+	heap1.insert_value(14);
+	heap1.insert_value(6);
+	heap1.insert_value(8);
+	heap1.remove_by_idx(0);
+	heap1.replace_top(20);
+	heap1.replace_top(1);
+
+
 	std::cin.get();
 
 	return 0;

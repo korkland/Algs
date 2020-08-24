@@ -1,20 +1,24 @@
 #pragma once
 
-// Fixed size heap
+// This heap does not meant to grow dynamically !
+// capacity allocation options:
+// Constructor(capacity)
+// re_alloc(capacity)
+// build_heap_from_data(data, data_size, heap_capacity)
 
 template <class T>
-class MaxHeap
+class MinHeap
 {
 public:
 
-	MaxHeap(){}
+	MinHeap(){}
 
-	MaxHeap(size_t capacity)
+	MinHeap(size_t capacity)
 	{
 		re_alloc(capacity);
 	}
 
-	~MaxHeap()
+	~MinHeap()
 	{
 		clear();
 		::operator delete(m_data, (m_capacity + 1) * sizeof(T));
@@ -117,16 +121,16 @@ public:
 
 	size_t capacity() const { return m_capacity; }
 
-	T pop_max()
+	T pop_min()
 	{
-		T max = m_data[1];
+		T min = m_data[1];
 		std::swap(m_data[1], m_data[m_size--]);
 		bubble_down(1);
 
-		return max;
+		return min;
 	}
 
-	T get_max() const { return m_data[1]; }
+	T get_min() const { return m_data[1]; }
 
 private:
 
@@ -140,7 +144,7 @@ private:
 	{
 		if (i > m_size) return;
 
-		while (i != 1 && m_data[i] > m_data[parent(i)])
+		while (i != 1 && m_data[i] < m_data[parent(i)])
 		{
 			std::swap(m_data[parent(i)], m_data[i]);
 			i = parent(i);
@@ -155,12 +159,12 @@ private:
 		size_t right = right_child(i);
 		size_t swap_id = i;
 
-		if (left <= m_size && m_data[i] < m_data[left])
+		if (left <= m_size && m_data[i] > m_data[left])
 		{
 			swap_id = left;
 		}
 
-		if (right <= m_size && m_data[swap_id] < m_data[right])
+		if (right <= m_size && m_data[swap_id] > m_data[right])
 		{
 			swap_id = right;
 		}
