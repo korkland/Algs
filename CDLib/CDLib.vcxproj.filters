@@ -27,5 +27,8 @@
     <ClInclude Include="Containers\Max_Heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Containers\Min_Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -153,17 +153,19 @@ int main() {
 // 	int target = 26;
 // 	std::vector<int> result = s.twoSum(v, target);
 
-	MaxHeap<int> heap1;
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
-	heap1.build_heap_from_data(arr, 10, 12);
-	heap1.insert_value(14);
-	heap1.insert_value(6);
-	heap1.insert_value(8);
-	heap1.remove_by_idx(0);
-	heap1.replace_top(20);
-	heap1.replace_top(1);
+// 	MinHeap<int> heap1;
+// 	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+// 	heap1.build_heap_from_data(arr, 10, 12);
+// 	heap1.insert_value(14);
+// 	heap1.insert_value(6);
+// 	heap1.insert_value(8);
+// 	heap1.remove_by_idx(2);
+// 	heap1.replace_top(20);
+// 	heap1.replace_top(1);
 
-
+	int val = 121;
+	int res = val / 10;
+	int first = val % 10;
 	std::cin.get();
 
 	return 0;
