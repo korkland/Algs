@@ -62,12 +62,22 @@ void print_vec(const Vector<Vector3>& vec)
 	for (size_t i = 0; i < vec.size(); i++)
 		std::cout << vec[i].x << ", " << vec[i].y << ", " << vec[i].z << ", " << std::endl;
 }
+
 template<typename T>
 void print_vec(const Vector<T>& vec)
 {
 	for (size_t i = 0; i < vec.size(); i++)
 		std::cout << vec[i] << std::endl;
 }
+
+//Definition for singly - linked list.
+struct ListNode {
+	int val;
+	ListNode *next;
+	ListNode() : val(0), next(nullptr) {}
+	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
 
 class Solution {
 public:
@@ -88,6 +98,65 @@ public:
 			map[nums[i]] = i;
 		}
 		return result;
+	}
+
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+		
+		if (!l1)
+			return l2;
+		if (!l2)
+			return l1;
+		
+		ListNode* res = new ListNode(-1);
+		ListNode* current = res;
+		while (l1 && l2)
+		{
+			if (l1->val <= l2->val)
+			{
+				current->next = l1;
+				l1 = l1->next;
+			}
+			else
+			{
+				current->next = l2;
+				l2 = l2->next;
+			}
+			current = current->next;
+		}
+
+		if (l1)
+			current->next = l1;
+		else
+			current->next = l2;
+
+		return res->next;
+	}
+
+	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+
+		int resid = 0;
+		ListNode* res = new ListNode(-1);
+		ListNode* curr = res;
+
+		while (l1 || l2)
+		{
+			int val1 = l1 ? l1->val : 0;
+			int val2 = l2 ? l2->val : 0;
+
+			int sum = val1 + val2 + resid;
+
+			resid = sum / 10;
+
+			curr->next = new ListNode(sum % 10);
+
+			if (l1) l1->next;
+			if (l2) l2->next;
+		}
+
+		if (resid)
+			curr->next = new ListNode(resid);
+
+		return res->next;
 	}
 };
 
@@ -163,9 +232,14 @@ int main() {
 // 	heap1.replace_top(20);
 // 	heap1.replace_top(1);
 
-	int val = 121;
-	int res = val / 10;
-	int first = val % 10;
+// 	int val = 121;
+// 	int res = val / 10;
+// 	int first = val % 10;
+	Solution sol;
+	ListNode* a = new ListNode(0);
+	ListNode* b = new ListNode(7); b->next = new ListNode(3);
+	ListNode* res = sol.addTwoNumbers(a, b);
+
 	std::cin.get();
 
 	return 0;
