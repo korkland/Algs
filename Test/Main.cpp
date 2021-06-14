@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include "Max_Heap.h"
 #include "Min_Heap.h"
+#include "version2/vectorclass.h"
 
 struct Vector3
 {
@@ -204,7 +205,7 @@ int main() {
 		vec3.emplace_back(4.f, 8.f, 0.f);
 		print_vec(vec3);
 	}
-	*/
+	
 
 // 	float A[16] = { 9, 5, 1, 3, 0,
 // 					5, 3, 6, 7, 7,
@@ -235,11 +236,17 @@ int main() {
 // 	int val = 121;
 // 	int res = val / 10;
 // 	int first = val % 10;
-	Solution sol;
-	ListNode* a = new ListNode(0);
-	ListNode* b = new ListNode(7); b->next = new ListNode(3);
-	ListNode* res = sol.addTwoNumbers(a, b);
+// 	Solution sol;
+// 	ListNode* a = new ListNode(0);
+// 	ListNode* b = new ListNode(7); b->next = new ListNode(3);
+// 	ListNode* res = sol.addTwoNumbers(a, b);
+*/
 
+	Vec8f A(1, 2, 3, 4, 5, 6, 7, 8);
+	Vec8f B(5, 1, 4, 2, 9, 8, 0, 6);
+
+	Vec8f C = A + B;
+	
 	std::cin.get();
 
 	return 0;

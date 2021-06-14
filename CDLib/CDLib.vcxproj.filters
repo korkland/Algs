@@ -30,5 +30,70 @@
     <ClInclude Include="Containers\Min_Heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="version2\instrset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vector_convert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorf128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorf256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorf256e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorf512.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectorf512e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori256e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori512.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori512e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori512s.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectori512se.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectormath_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectormath_exp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectormath_hyp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectormath_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version2\vectormath_trig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="version2\instrset_detect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

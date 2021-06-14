@@ -57,6 +57,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjDir)Containers; $(ProjDir)Alg;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,6 +73,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjDir)Containers; $(ProjDir)Alg;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,6 +88,29 @@
     <ClInclude Include="Containers\Max_Heap.h" />
     <ClInclude Include="Containers\Min_Heap.h" />
     <ClInclude Include="Containers\Vector.h" />
+    <ClInclude Include="version2\instrset.h" />
+    <ClInclude Include="version2\vectorclass.h" />
+    <ClInclude Include="version2\vectorf128.h" />
+    <ClInclude Include="version2\vectorf256.h" />
+    <ClInclude Include="version2\vectorf256e.h" />
+    <ClInclude Include="version2\vectorf512.h" />
+    <ClInclude Include="version2\vectorf512e.h" />
+    <ClInclude Include="version2\vectori128.h" />
+    <ClInclude Include="version2\vectori256.h" />
+    <ClInclude Include="version2\vectori256e.h" />
+    <ClInclude Include="version2\vectori512.h" />
+    <ClInclude Include="version2\vectori512e.h" />
+    <ClInclude Include="version2\vectori512s.h" />
+    <ClInclude Include="version2\vectori512se.h" />
+    <ClInclude Include="version2\vectormath_common.h" />
+    <ClInclude Include="version2\vectormath_exp.h" />
+    <ClInclude Include="version2\vectormath_hyp.h" />
+    <ClInclude Include="version2\vectormath_lib.h" />
+    <ClInclude Include="version2\vectormath_trig.h" />
+    <ClInclude Include="version2\vector_convert.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="version2\instrset_detect.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

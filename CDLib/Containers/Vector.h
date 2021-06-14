@@ -1,8 +1,57 @@
 #pragma once
 
+template<typename Vector>
+class VectorIterator
+{
+public:
+	using ValueType = typename Vector::ValueType;
+	using PointerType = ValueType*;
+	using ReferenceType = ValueType&;
+public:
+	VectorIterator(PointerType ptr)
+		: m_ptr(ptr){}
+
+	VectorIterator& operator++()
+	{
+		m_ptr++;
+		return *this;
+	}
+
+	VectorIterator& operator++(int)
+	{
+		VectorIterator iterator = *this;
+		++(*this);
+		return iterator;
+	}
+
+	VectorIterator& operator--()
+	{
+		m_ptr--;
+		return *this;
+	}
+
+	VectorIterator& operator--(int)
+	{
+		VectorIterator iterator = *this;
+		--(*this);
+		return iterator;
+	}
+
+	ReferenceType operator[](int index)
+	{
+		return *(m_ptr + index);
+	}
+
+private:
+	PointerType m_ptr;
+};
+
 template<typename T>
 class Vector
 {
+public:
+	using ValueType = T;
+	using Iterator = VectorIterator<Vector<T>>;
 public:
 	Vector()
 	{
@@ -85,6 +134,17 @@ public:
 
 	size_t size() const { return m_size; }
 
+	Iterator begin()
+	{
+		return Iterator(m_data);
+	}
+	
+	Iterator end()
+	{
+		return Iterator(m_data + m_size);
+	}
+
+private:
 	void re_alloc(size_t new_capacity)
 	{
 		T* new_block = (T*)::operator new(new_capacity * sizeof(T));
